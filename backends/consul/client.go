@@ -44,7 +44,7 @@ func New(nodes []string, scheme, cert, key, caCert string) (*ConsulClient, error
 		caCertPool.AppendCertsFromPEM(ca)
 		tlsConfig.RootCAs = caCertPool
 	}
-	conf.HttpClient.Transport = &http.Transport{
+	conf.Transport = &http.Transport{
 		TLSClientConfig: tlsConfig,
 	}
 
